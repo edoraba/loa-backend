@@ -1,17 +1,3 @@
 {
-    "version": 2,
-    "framework": "node",
-    "name": "loa-backend",
-    "builds": [
-        {
-            "src": "server.ts",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/server.ts"
-        }
-    ]
+    "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
 }

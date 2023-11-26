@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon server",
     "build": "tsc",
-    "start": "NODE_ENV=production ts-node server"
+    "start": "NODE_ENV=production ts-node server",
+    "vercel-build": "echo hello"
   },
   "keywords": [],
   "author": "",
