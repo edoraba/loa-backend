@@ -2,11 +2,11 @@
   "name": "express-mongo-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "server.ts",
+  "main": "index.ts",
   "scripts": {
-    "dev": "nodemon server",
+    "dev": "nodemon index",
     "build": "tsc",
-    "start": "NODE_ENV=production ts-node server",
+    "start": "NODE_ENV=production ts-node index",
     "vercel-build": "echo hello"
   },
   "keywords": [],
