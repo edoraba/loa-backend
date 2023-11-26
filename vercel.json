@@ -1,5 +1,11 @@
 {
     "version": 2,
+    "rewrite": [
+        {
+            "source": "/(.*)",
+            "destination": "/"
+        }
+    ],
     "builds": [
         {
             "src": "./server.ts",
