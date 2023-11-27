@@ -6,8 +6,11 @@ import cors from "cors";
 const app: Express = express();
 
 app.use(cors({
-  origin: ['https://loa-hazel.vercel.app/', 'http://localhost:3000']
+  origin: ['https://loa-hazel.vercel.app', 'http://localhost:3000'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
