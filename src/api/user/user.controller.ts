@@ -1,8 +1,5 @@
 import { Request, Response, NextFunction } from "express";
 import * as userService from "./user.service";
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import User from "./user.model";
 
 async function register(req: Request, res: Response, next: NextFunction) {
   try {
