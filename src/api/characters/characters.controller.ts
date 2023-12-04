@@ -8,7 +8,7 @@ async function getAll(req: Request, res: Response, next: NextFunction) {
       console.error(`Error while getting the lists`, err.message);
       next(err);
     }
-  }
+}
 
 async function get(req: Request, res: Response, next: NextFunction) {
   try {

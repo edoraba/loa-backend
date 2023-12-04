@@ -8,7 +8,8 @@ const app: Express = express();
 app.use(cors({
   origin: ['http://localhost:3000', 'https://loa-frontend-edorabas-projects.vercel.app', 'https://loa-hazel.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  optionsSuccessStatus: 200
 }));
 
 app.use(bodyParser.json());

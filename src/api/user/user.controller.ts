@@ -12,14 +12,13 @@ async function register(req: Request, res: Response, next: NextFunction) {
 }
 
 async function login(req: Request, res: Response, next: NextFunction) {
-    try {
-        res.json(await userService.login(req.body));
-        res.status(201).json(res);
-    } catch (err) {
-        res.status(500).send('Errore del server');
-        console.error(`Error while loggin in`, err.message);
-        next(err);
-    }
+  try {
+      const loginResponse = await userService.login(req.body);
+      res.status(201).json(loginResponse);
+  } catch (err) {
+      console.error(`Error while logging in`, err.message);
+      res.status(500).send('Errore del server');
+  }
 };
 
 export { register, login };
