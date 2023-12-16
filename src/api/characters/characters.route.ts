@@ -6,12 +6,16 @@ const router = express.Router();
 
 router.get('/', checkJwt, charactersController.getAll);
 
-router.get('/:id', charactersController.get);
+router.get('/user/:userId', checkJwt, charactersController.getByUser);
 
-router.post('/', charactersController.create);
+router.get('/search', checkJwt, charactersController.getByName);
 
-router.put('/:id', charactersController.update);
+router.get('/:id', checkJwt, charactersController.get);
 
-router.delete('/:id', charactersController.remove);
+router.post('/create', checkJwt, charactersController.create);
+
+router.put('/:id', checkJwt, charactersController.update);
+
+router.delete('/:id', checkJwt, charactersController.remove);
 
 export default router;

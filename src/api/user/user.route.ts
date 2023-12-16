@@ -1,5 +1,6 @@
 import express from 'express';
 import * as userController from './user.controller';
+import { checkJwt } from '../../utils/functions';
 
 const router = express.Router();
 

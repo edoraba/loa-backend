@@ -28,9 +28,13 @@ async function login(data) {
     throw new Error('Invalid credentials');
   }
 
-  const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '5h' });
-
-  return { token };
+  const userData = {
+    _id: user._id,
+    email: email,
+  }
+  const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '24h' });
+  
+  return { token, user: userData };
 }
 
 export { register, login };

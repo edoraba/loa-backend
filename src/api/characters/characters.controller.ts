@@ -10,6 +10,26 @@ async function getAll(req: Request, res: Response, next: NextFunction) {
     }
 }
 
+async function getByUser (req: Request, res: Response) {
+  try {
+    const userId = req.params.userId;
+    const characters = await charactersService.getByUserId(userId);
+    res.json(characters);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+};
+
+async function getByName (req: Request, res: Response) {
+  try {
+    const name = req.query.name;
+    const characters = await charactersService.getByName(name);
+    res.json(characters);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+};
+
 async function get(req: Request, res: Response, next: NextFunction) {
   try {
     res.json(await charactersService.get(req.params.id));
@@ -46,4 +66,4 @@ async function remove(req: Request, res: Response, next: NextFunction) {
   }
 }
 
-export { getAll, get, create, update, remove };
+export { getAll, getByUser, getByName, get, create, update, remove };
